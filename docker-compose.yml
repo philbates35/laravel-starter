@@ -1,0 +1,18 @@
+services:
+    php:
+        build: .
+        # uncomment the following line if you want to run this in a production environment
+        # restart: always
+        ports:
+            - 443:443
+        volumes:
+            - ./:/app:z
+            - caddy_data:/data:z
+            - caddy_config:/config:z
+        # comment the following line in production, it allows to have nice human-readable logs in dev
+        tty: true
+
+# Volumes needed for Caddy certificates and configuration
+volumes:
+    caddy_data:
+    caddy_config:
