@@ -1,0 +1,9 @@
+# Ignore everything...
+/*
+
+# Except...:
+!resources/
+!package.json
+!tsconfig.json
+!tsconfig.node.json
+!vite.config.ts
