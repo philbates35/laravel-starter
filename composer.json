@@ -18,7 +18,8 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.1",
-        "spatie/laravel-ignition": "^2.0"
+        "spatie/laravel-ignition": "^2.0",
+        "squizlabs/php_codesniffer": "^3.8"
     },
     "replace": {
         "symfony/polyfill-ctype": "*",
@@ -64,6 +65,12 @@
         ],
         "php-cs-fixer": [
             "php-cs-fixer fix --ansi"
+        ],
+        "phpcs": [
+            "phpcs"
+        ],
+        "phpcbf": [
+            "phpcbf"
         ]
     },
     "extra": {
