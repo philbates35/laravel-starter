@@ -108,6 +108,9 @@ return [
     |
     */
 
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_cache_'),
+    'prefix' => env(
+        'CACHE_PREFIX',
+        Str::slug(is_string($appName = env('APP_NAME')) ? $appName : 'laravel', '_') . '_cache_',
+    ),
 
 ];

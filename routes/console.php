@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 
@@ -15,6 +16,12 @@ use Illuminate\Support\Facades\Artisan;
 | simple approach to interacting with each command's IO methods.
 |
 */
+
+/**
+ * See: https://github.com/larastan/larastan/issues/1110
+ *
+ * @var Command $this
+ */
 
 Artisan::command('inspire', function (): void {
     $this->comment(Inspiring::quote());
