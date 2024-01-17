@@ -1,66 +1,112 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Laravel starter
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a modern, strict, strongly typed Laravel application skeleton that can be used to start new projects.
 
-## About Laravel
+## System requirements
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+You should ensure that you have the following installed on your host machine:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* Docker
+* Docker-compose
+* pnpm v8
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+That's it!
 
-## Learning Laravel
+### Why isn't Node a system requirement?
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+We use pnpm's `use-node-version` in `.npmrc` to manage the node version to use in the project, which means that you don't need a locally installed Node. This way we can ensure that all developers are using the same version of Node.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## The Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+PHP and webserver:
+* Dockerized [Laravel Octane](https://laravel.com/docs/10.x/octane) with [FrankenPHP](https://frankenphp.dev) for lightning fast response times and HTTPS local development environment
+* PHP 8.3
 
-## Laravel Sponsors
+Back end:
+* Laravel 10
+* PHPStan (& Larastan) set to the highest level, as well as phpstan/phpstan-strict-rules for extra strictness
+* PHPUnit 10
+* PHP CS Fixer configured to use the latest PER coding standards
+* PHP_CodeSniffer configured to use the latest PSR12 coding standards
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Front end:
+* pnpm
+* Node 20 (LTS)
+* TypeScript
+* Vite 5 (with Laravel plugin)
+* Vitest
+* Prettier
+* ESLint
 
-### Premium Partners
+## Getting started
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+1. Install front end dependencies:
+    ```shell
+    pnpm install
+    ```
 
-## Contributing
+2. Run the Vite dev server:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    ```shell
+    pnpm run dev
+    ```
 
-## Code of Conduct
+3. Install composer dependencies:
+    ```shell
+    docker run --rm -it -u $(id -u $USER) -v $PWD:/app composer:latest composer install
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. Start Octane (FrankenPHP):
+    ```shell
+    docker-compose up -d
+    ```
 
-## Security Vulnerabilities
+5. Go to https://localhost/, accept the potential security risk (it's a self-signed certificate), and you should see the Laravel welcome page.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Cheat sheet
 
-## License
+Back end:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```shell
+# Use composer
+docker-compose exec php composer install
+docker-compose exec php composer update
+docker-compose exec php composer require --dev foo/bar
+
+# Run tests
+docker-compose exec php composer run test
+
+# Run phpstan
+docker-compose exec php composer run phpstan
+
+# Run php-cs-fixer
+docker-compose exec php composer run php-cs-fixer
+
+# Run phpcs
+docker-compose exec php composer run phpcs
+```
+
+Front end:
+
+```shell
+# Run the Vite dev server
+pnpm run dev
+
+# Run tsc & build assets for production
+pnpm run build
+
+# Run tests
+pnpm run test
+
+# Run tests with coverage report, output at coverage/
+pnpm run coverage
+
+# Run eslint
+pnpm run lint
+
+# Run prettier
+pnpm run prettier
+
+# Run prettier with --check (used in CI only)
+pnpm run prettier-check
+```
