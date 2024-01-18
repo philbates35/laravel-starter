@@ -3,6 +3,7 @@
 
 # Except...:
 !resources/
+!.eslintrc.cjs
 !package.json
 !tsconfig.json
 !tsconfig.node.json
