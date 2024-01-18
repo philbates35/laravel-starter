@@ -5,7 +5,8 @@ declare(strict_types=1);
 $finder = (new PhpCsFixer\Finder())
     ->in(__DIR__)
     ->name('artisan')
-    ->exclude(['bootstrap/cache']);
+    ->exclude(['bootstrap/cache', 'node_modules', 'storage'])
+    ->notPath('public/frankenphp-worker.php');
 
 return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
