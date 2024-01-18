@@ -6,6 +6,7 @@ This is a modern, strict, strongly typed Laravel application skeleton that can b
 
 You should ensure that you have the following installed on your host machine:
 
+* Git
 * Docker
 * Docker-compose
 * pnpm v8
@@ -40,28 +41,34 @@ Front end:
 
 ## Getting started
 
-1. Install front end dependencies:
+1. Clone this repo:
+   ```shell
+   git clone git@github.com:philbates35/laravel-starter.git example-project
+   cd example-project
+   ```
+
+2. Create the `.env` file:
+   ```shell
+   cp .env.example .env
+   ```
+
+3. Install composer dependencies, then start Octane (FrankenPHP):
+    ```shell
+    docker-compose up -d
+    ```
+
+4. Install front end dependencies:
     ```shell
     pnpm install
     ```
 
-2. Run the Vite dev server:
+5. Run the Vite dev server:
 
     ```shell
     pnpm run dev
     ```
 
-3. Install composer dependencies:
-    ```shell
-    docker run --rm -it -u $(id -u $USER) -v $PWD:/app composer:latest composer install
-    ```
-
-4. Start Octane (FrankenPHP):
-    ```shell
-    docker-compose up -d
-    ```
-
-5. Go to https://localhost/, accept the potential security risk (it's a self-signed certificate), and you should see the Laravel welcome page.
+6. Go to https://localhost/, accept the potential security risk (it's a self-signed certificate), and you should see the Laravel welcome page.
 
 ## Cheat sheet
 
