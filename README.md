@@ -45,6 +45,7 @@ Front end:
    ```shell
    git clone git@github.com:philbates35/laravel-starter.git example-project
    cd example-project
+   rm -rf .git/
    ```
 
 2. Create the `.env` file:
