@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 $finder = (new PhpCsFixer\Finder())
     ->in(__DIR__)
-    ->name('artisan')
+    ->ignoreDotFiles(false)
+    ->name(['.php-cs-fixer.dist.php', 'artisan'])
     ->exclude(['bootstrap/cache', 'node_modules', 'storage'])
     ->notPath('public/frankenphp-worker.php');
 
