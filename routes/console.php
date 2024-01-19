@@ -18,11 +18,10 @@ use Illuminate\Support\Facades\Artisan;
 */
 
 /**
- * See: https://github.com/larastan/larastan/issues/1110
+ * See: https://github.com/larastan/larastan/issues/1110.
  *
  * @var Command $this
  */
-
 Artisan::command('inspire', function (): void {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
