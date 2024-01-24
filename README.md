@@ -27,6 +27,7 @@ Back end:
 * Laravel 10
 * PHPStan (& Larastan) set to the highest level, as well as phpstan/phpstan-strict-rules for extra strictness
 * PHPUnit 10
+* Rector
 * PHP CS Fixer configured to use the latest PER coding standards
 * PHP_CodeSniffer configured to use the latest PSR12 coding standards
 
