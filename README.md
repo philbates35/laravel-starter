@@ -114,8 +114,8 @@ pnpm run coverage
 pnpm run lint
 
 # Run prettier
-pnpm run prettier
+pnpm run format
 
 # Run prettier with --check (used in CI only)
-pnpm run prettier-check
+pnpm run format-check
 ```
