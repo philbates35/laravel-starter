@@ -17,6 +17,8 @@
     "axios": "^1.6.4",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "npm:eslint-plugin-i@^2.29.1",
     "laravel-vite-plugin": "^1.0.0",
     "prettier": "^3.2.2",
     "typescript": "^5.3.3",
