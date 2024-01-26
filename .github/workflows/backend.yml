@@ -7,6 +7,16 @@ on:
   pull_request:
 
 jobs:
+  composer-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - uses: actions/checkout@v4
+      - name: Validate
+        run: composer validate --strict --check-lock
+
   test:
     runs-on: ubuntu-latest
     steps:
