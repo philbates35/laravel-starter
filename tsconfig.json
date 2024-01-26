@@ -13,6 +13,11 @@
     "isolatedModules": true,
     "noEmit": true,
 
+    /* Absolute imports */
+    "paths": {
+      "@/*": ["./resources/js/*"],
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
