@@ -16,3 +16,7 @@ parameters:
     level: 9
     excludePaths:
         - bootstrap/cache/
+    strictRules:
+        # TODO remove when https://github.com/phpstan/phpstan-strict-rules/issues/140 is resolved
+        # See also: https://github.com/larastan/larastan/issues/1272
+        strictCalls: false
