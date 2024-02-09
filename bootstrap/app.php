@@ -14,7 +14,7 @@ declare(strict_types=1);
 */
 
 $app = new Illuminate\Foundation\Application(
-    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__),
+    isset($_ENV['APP_BASE_PATH']) && is_string($_ENV['APP_BASE_PATH']) ? $_ENV['APP_BASE_PATH'] : dirname(__DIR__),
 );
 
 /*
