@@ -30,7 +30,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         RateLimiter::for(
             'api',
-            static fn(Request $request) => Limit::perMinute(60)->by($request->user()?->id ?? $request->ip()),
+            static fn(Request $request) => Limit::perMinute(60)->by($request->user()->id ?? $request->ip()),
         );
 
         $this->routes(static function (): void {
