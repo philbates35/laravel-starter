@@ -15,15 +15,15 @@
 
     /* Absolute imports */
     "paths": {
-      "@/*": ["./resources/js/*"],
+      "@/*": ["./resources/js/*"]
     },
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["resources/js"],
-  "references": [{ "path": "./tsconfig.node.json" }],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

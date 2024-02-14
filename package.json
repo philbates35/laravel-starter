@@ -11,19 +11,18 @@
     "format-check": "prettier . --check"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.19.0",
-    "@typescript-eslint/parser": "^6.19.0",
-    "@vitest/coverage-v8": "^1.2.0",
-    "axios": "^1.6.4",
+    "@vitest/coverage-v8": "^1.2.2",
+    "axios": "^1.6.7",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "npm:eslint-plugin-i@^2.29.1",
+    "typescript-eslint": "^7.0.1",
     "laravel-vite-plugin": "^1.0.0",
-    "prettier": "^3.2.2",
+    "prettier": "^3.2.5",
     "typescript": "^5.3.3",
-    "vite": "^5.0.0",
-    "vitest": "^1.2.0"
+    "vite": "^5.1.2",
+    "vitest": "^1.2.2"
   },
   "engines": {
     "node": "^20.11.0",
