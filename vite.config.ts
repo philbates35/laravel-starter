@@ -30,7 +30,7 @@ export default defineConfig({
     exclude: [...configDefaults.exclude, ...projectExcludes],
     coverage: {
       provider: "v8",
-      exclude: [...configDefaults.coverage.exclude, ...projectExcludes],
+      exclude: [...(configDefaults.coverage.exclude ?? []), ...projectExcludes],
     },
     setupFiles: ["resources/js/setupFile.ts"],
   },
