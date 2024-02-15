@@ -7,10 +7,7 @@ namespace App\Providers;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Translation\Translator;
-use OutOfBoundsException;
 use Override;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,19 +18,7 @@ class AppServiceProvider extends ServiceProvider
     #[Override]
     public function register(): void
     {
-        $this->app->resolving('translator', function (Translator $translator): void {
-            $translator->handleMissingKeysUsing(function (string $key): string {
-                $message = "Missing translation key [{$key}] detected.";
-
-                if (!$this->isProduction()) {
-                    throw new OutOfBoundsException($message);
-                }
-
-                Log::warning($message);
-
-                return $key;
-            });
-        });
+        //
     }
 
     /**
