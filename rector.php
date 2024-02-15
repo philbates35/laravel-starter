@@ -22,7 +22,15 @@ return RectorConfig::configure()
     //   * https://github.com/rectorphp/rector/issues/8006
     //   * https://github.com/larastan/larastan/issues/1664#issuecomment-1637152828
     ->withBootstrapFiles([__DIR__ . '/vendor/larastan/larastan/bootstrap.php'])
-    ->withPHPStanConfigs([__DIR__ . '/phpstan.neon.dist'])
+    // All extensions except PHPStan bleeding edge. See:
+    //   * https://github.com/rectorphp/rector/issues/8492#issuecomment-1944428821
+    ->withPHPStanConfigs([
+        __DIR__ . '/vendor/larastan/larastan/extension.neon',
+        __DIR__ . '/vendor/phpstan/phpstan-mockery/extension.neon',
+        __DIR__ . '/vendor/phpstan/phpstan-phpunit/extension.neon',
+        __DIR__ . '/vendor/phpstan/phpstan-phpunit/rules.neon',
+        __DIR__ . '/vendor/phpstan/phpstan-strict-rules/rules.neon',
+    ])
     ->withPhpSets()
     ->withPreparedSets(
         deadCode: true,
