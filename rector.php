@@ -25,11 +25,7 @@ return RectorConfig::configure()
     // All extensions except PHPStan bleeding edge. See:
     //   * https://github.com/rectorphp/rector/issues/8492#issuecomment-1944428821
     ->withPHPStanConfigs([
-        __DIR__ . '/vendor/larastan/larastan/extension.neon',
-        __DIR__ . '/vendor/phpstan/phpstan-mockery/extension.neon',
-        __DIR__ . '/vendor/phpstan/phpstan-phpunit/extension.neon',
-        __DIR__ . '/vendor/phpstan/phpstan-phpunit/rules.neon',
-        __DIR__ . '/vendor/phpstan/phpstan-strict-rules/rules.neon',
+        __DIR__ . '/phpstan.neon.dist',
     ])
     ->withPhpSets()
     ->withPreparedSets(
