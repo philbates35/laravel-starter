@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
-use Rector\Php83\Rector\ClassConst\AddTypeToConstRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use RectorLaravel\Set\LaravelSetList;
 
@@ -49,8 +48,4 @@ return RectorConfig::configure()
     ])
     ->withSkip([
         __DIR__ . '/bootstrap/cache',
-
-        // TODO Stop skipping this rule as soon as phpcs supports typed const
-        //     See: https://github.com/PHPCSStandards/PHP_CodeSniffer/issues/106
-        AddTypeToConstRector::class,
     ]);
