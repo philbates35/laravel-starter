@@ -22,8 +22,6 @@ return RectorConfig::configure()
     //   * https://github.com/rectorphp/rector/issues/8006
     //   * https://github.com/larastan/larastan/issues/1664#issuecomment-1637152828
     ->withBootstrapFiles([__DIR__ . '/vendor/larastan/larastan/bootstrap.php'])
-    // All extensions except PHPStan bleeding edge. See:
-    //   * https://github.com/rectorphp/rector/issues/8492#issuecomment-1944428821
     ->withPHPStanConfigs([
         __DIR__ . '/phpstan.neon.dist',
     ])
