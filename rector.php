@@ -21,7 +21,9 @@ return RectorConfig::configure()
     // Larastan's bootstrap file doesn't run when Rector boots PHPStan, so we need to include it manually. See:
     //   * https://github.com/rectorphp/rector/issues/8006
     //   * https://github.com/larastan/larastan/issues/1664#issuecomment-1637152828
-    ->withBootstrapFiles([__DIR__ . '/vendor/larastan/larastan/bootstrap.php'])
+    ->withBootstrapFiles([
+        __DIR__ . '/vendor/larastan/larastan/bootstrap.php',
+    ])
     ->withPHPStanConfigs([
         __DIR__ . '/phpstan.neon.dist',
     ])
