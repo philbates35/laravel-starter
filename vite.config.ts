@@ -26,6 +26,9 @@ export default defineConfig({
       refresh: true,
     }),
   ],
+  build: {
+    sourcemap: true,
+  },
   test: {
     environment: "jsdom",
     exclude: [...configDefaults.exclude, ...projectExcludes],
