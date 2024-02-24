@@ -27,6 +27,7 @@ export default defineConfig({
     }),
   ],
   test: {
+    environment: "jsdom",
     exclude: [...configDefaults.exclude, ...projectExcludes],
     coverage: {
       provider: "v8",

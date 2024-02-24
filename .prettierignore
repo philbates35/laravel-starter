@@ -6,5 +6,5 @@
 !.eslintrc.cjs
 !package.json
 !tsconfig.json
-!tsconfig.node.json
+!tsconfig.*.json
 !vite.config.ts
