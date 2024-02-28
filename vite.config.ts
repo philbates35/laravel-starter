@@ -17,6 +17,8 @@ const projectExcludes = [
   "storages/*",
   "tests/*",
   "vendor/*",
+  "postcss.config.js",
+  "tailwind.config.ts",
 ];
 
 // eslint-disable-next-line import/no-default-export

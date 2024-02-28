@@ -5,6 +5,8 @@
 !resources/
 !.eslintrc.cjs
 !package.json
+!postcss.config.js
+!tailwind.config.ts
 !tsconfig.json
 !tsconfig.*.json
 !vite.config.ts
