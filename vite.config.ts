@@ -1,3 +1,4 @@
+import react from "@vitejs/plugin-react";
 import laravel from "laravel-vite-plugin";
 import { defineConfig } from "vite";
 import { configDefaults } from "vitest/config";
@@ -22,9 +23,10 @@ const projectExcludes = [
 export default defineConfig({
   plugins: [
     laravel({
-      input: ["resources/js/app.ts"],
+      input: ["resources/js/main.tsx"],
       refresh: true,
     }),
+    react(),
   ],
   build: {
     sourcemap: true,
