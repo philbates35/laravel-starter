@@ -1,5 +1,12 @@
 {
   "files": [],
+  "compilerOptions": {
+    // Absolute imports. Define here instead of tsconfig.app.json because e.g. eslint-import-resolver-typescript
+    // and shadcn-ui don't support project references and only read directly from this file
+    "paths": {
+      "@/*": ["./resources/js/*"]
+    }
+  },
   "references": [
     {
       "path": "./tsconfig.app.json"

@@ -1,6 +1,6 @@
 import laravel from "laravel-vite-plugin";
 import { defineConfig } from "vite";
-import { configDefaults } from "vitest/config"; // eslint-disable-line import/extensions
+import { configDefaults } from "vitest/config";
 
 // Exclude everything except resources/js/
 const projectExcludes = [

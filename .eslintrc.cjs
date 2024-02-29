@@ -22,7 +22,7 @@ module.exports = {
   plugins: ["import"],
   rules: {
     "import/exports-last": "error",
-    "import/extensions": ["error", "always"],
+    "import/extensions": ["error", "ignorePackages"],
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-default-export": "error",

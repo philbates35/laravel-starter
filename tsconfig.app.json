@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.json",
   "include": ["resources/js"],
   "exclude": ["resources/js/**/__tests__/*"],
   "compilerOptions": {
@@ -18,11 +19,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-
-    /* Absolute imports */
-    "paths": {
-      "@/*": ["./resources/js/*"]
-    },
 
     /* Linting */
     "strict": true,
