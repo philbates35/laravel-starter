@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { Hero } from "@/components/hero.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import {
   Select,
@@ -48,6 +49,7 @@ export function App() {
           </SelectGroup>
         </SelectContent>
       </Select>
+      <Hero></Hero>
     </>
   );
 }
