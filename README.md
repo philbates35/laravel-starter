@@ -59,18 +59,23 @@ Front end:
     docker-compose up -d
     ```
 
-4. Install front end dependencies:
+4. Generate application key:
+   ```shell
+   docker-compose exec php php artisan key:generate
+    ```
+
+5. Install front end dependencies:
     ```shell
     pnpm install
     ```
 
-5. Run the Vite dev server:
+6. Run the Vite dev server:
 
     ```shell
     pnpm run dev
     ```
 
-6. Go to https://localhost/, accept the potential security risk (it's a self-signed certificate), and you should see the Laravel welcome page.
+7. Go to https://localhost/, accept the potential security risk (it's a self-signed certificate), and you should see the Laravel welcome page.
 
 ## Cheat sheet
 
