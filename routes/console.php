@@ -6,17 +6,6 @@ use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 
-/*
-|--------------------------------------------------------------------------
-| Console Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of your Closure based console
-| commands. Each Closure is bound to a command instance allowing a
-| simple approach to interacting with each command's IO methods.
-|
-*/
-
 /**
  * See: https://github.com/larastan/larastan/issues/1110.
  *
@@ -24,4 +13,4 @@ use Illuminate\Support\Facades\Artisan;
  */
 Artisan::command('inspire', function (): void {
     $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+})->purpose('Display an inspiring quote')->hourly();

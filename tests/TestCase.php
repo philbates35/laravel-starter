@@ -9,8 +9,6 @@ use Override;
 
 abstract class TestCase extends BaseTestCase
 {
-    use CreatesApplication;
-
     #[Override]
     protected function setUp(): void
     {

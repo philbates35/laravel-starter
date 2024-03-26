@@ -1,3 +1,4 @@
+import react from "@vitejs/plugin-react";
 import laravel from "laravel-vite-plugin";
 import { defineConfig } from "vite";
 import { configDefaults } from "vitest/config";
@@ -16,15 +17,18 @@ const projectExcludes = [
   "storages/*",
   "tests/*",
   "vendor/*",
+  "postcss.config.js",
+  "tailwind.config.ts",
 ];
 
 // eslint-disable-next-line import/no-default-export
 export default defineConfig({
   plugins: [
     laravel({
-      input: ["resources/js/app.ts"],
+      input: ["resources/js/main.tsx"],
       refresh: true,
     }),
+    react(),
   ],
   build: {
     sourcemap: true,
