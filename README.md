@@ -24,9 +24,9 @@ PHP and webserver:
 * PHP 8.3
 
 Back end:
-* Laravel 10
+* Laravel 11
 * PHPStan (& Larastan) set to the highest level, as well as phpstan/phpstan-strict-rules for extra strictness
-* PHPUnit 10
+* PHPUnit 11
 * Rector
 * PHP CS Fixer configured to use the latest PER coding standards
 * PHP_CodeSniffer configured to use the latest PSR12 coding standards
@@ -59,9 +59,9 @@ Front end:
     docker-compose up -d
     ```
 
-4. Generate application key:
+4. Set application key, create the database and run migrations:
    ```shell
-   docker-compose exec php php artisan key:generate
+   docker-compose exec php composer run post-create-project-cmd
     ```
 
 5. Install front end dependencies:
