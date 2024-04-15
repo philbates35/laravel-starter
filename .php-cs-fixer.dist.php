@@ -41,6 +41,7 @@ return (new PhpCsFixer\Config())
         'no_trailing_comma_in_singleline' => true,
         // 'numeric_literal_separator' => true,
         'psr_autoloading' => true,
+        'single_line_empty_body' => false,
 
         // Casing
         'class_reference_name_casing' => true,
