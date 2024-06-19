@@ -104,6 +104,7 @@ return [
     'previous_keys' => [
         ...array_filter(
             explode(',', is_string($previousKeys = env('APP_PREVIOUS_KEYS')) ? $previousKeys : ''),
+            static fn(string $previousKey): bool => $previousKey !== '',
         ),
     ],
 
