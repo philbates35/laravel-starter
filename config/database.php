@@ -58,7 +58,7 @@ return [
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+            ], static fn(mixed $optionValue): bool => is_string($optionValue) && $optionValue !== '') : [],
         ],
 
         'mariadb' => [
@@ -78,7 +78,7 @@ return [
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+            ], static fn(mixed $optionValue): bool => is_string($optionValue) && $optionValue !== '') : [],
         ],
 
         'pgsql' => [
